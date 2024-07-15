@@ -336,10 +336,11 @@ class _HomePageDesktopState extends State<HomePageDesktop> {
                       itemCount: Constants.skillIcons.length,
                       itemBuilder: (context, index) {
                         return Container(
-                          padding: EdgeInsets.all(width * 0.03),
+                          padding: EdgeInsets.all(width * 0.02),
                           decoration: BoxDecoration(
-                            color:
-                                (index % 2 == 0) ? Colors.black : Colors.white,
+                            color: (Constants.whiteIndex.contains(index + 1))
+                                ? Colors.white
+                                : Colors.black,
                             borderRadius: BorderRadius.circular(10),
                             border: Border.all(
                               color: Colors.black,
@@ -358,9 +359,10 @@ class _HomePageDesktopState extends State<HomePageDesktop> {
                                 Constants.skillNames[index],
                                 style: GoogleFonts.sora(
                                   textStyle: TextStyle(
-                                    color: (index % 2 == 0)
-                                        ? Colors.white
-                                        : Colors.black,
+                                    color: (Constants.whiteIndex
+                                            .contains(index + 1))
+                                        ? Colors.black
+                                        : Colors.white,
                                     fontSize: width * 0.015,
                                     fontWeight: FontWeight.bold,
                                   ),
@@ -372,7 +374,7 @@ class _HomePageDesktopState extends State<HomePageDesktop> {
                       },
                       gridDelegate:
                           const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 5,
+                        crossAxisCount: 6,
                         mainAxisSpacing: 8.0,
                         crossAxisSpacing: 8.0,
                         childAspectRatio: 1,
@@ -381,7 +383,7 @@ class _HomePageDesktopState extends State<HomePageDesktop> {
                   ],
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
